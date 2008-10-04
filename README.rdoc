@@ -1,0 +1,22 @@
+= attr_private
+
+attr_private is a way to hide fields on an ActiveRecord model such
+that they are inaccessible to external callers.  fields declared
+private are protected from most access methods provided by AR. 
+Attempts to access a private field will raise a NoMethodError as 
+though the field did not exist.
+
+== Using attr_private
+=== app/models/my_model.rb
+  class MyModel < ActiveRecord::Base
+    attr_private :my_field, :some_other_field
+  end
+
+== Limitations
+
+Currently, attr_private doesn't prevent reading via the attributes hash.
+
+
+== Special Thanks To
+* reQall for letting me hack in Ruby
+* Evan Light for pushing me to make this a gem (my first!)
