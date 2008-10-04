@@ -1,5 +1,3 @@
-require 'rake'
-
 Gem::Specification.new do |s|
   s.name = "attr_private"
   s.version = "0.1.0"
@@ -8,7 +6,7 @@ Gem::Specification.new do |s|
   s.test_files = "spec/spec_suite.rb"
   s.description = s.summary
  
-  s.files = FileList['[A-Z]*', '*.rb', 'lib/*.rb', 'spec/**/*.rb']
+  s.files = %w(CHANGES Rakefile README.rdoc lib/attr_private.rb spec/environment_fixture_setup.rb spec/spec.opts spec/spec_helper.rb spec/spec_suite.rb spec/attr_private/attr_private_spec.rb)
   s.require_path = 'lib'
  
   s.has_rdoc = true
@@ -18,7 +16,7 @@ Gem::Specification.new do |s|
   # the latest activesupport for some reason.
   # s.add_dependency("activerecord", ">= 2.1.0")
  
-  s.test_files = Dir.glob('spec/*_spec.rb')
+  s.test_files = %w(spec/attr_private/attr_private_spec.rb)
   s.require_path = 'lib'
   s.author = "Grant Goodale"
   s.email = "grant@reqall.com"
