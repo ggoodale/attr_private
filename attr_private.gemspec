@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "attr_private"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
   s.summary = "attr_private provides a way of making fields on an " <<
               "ActiveRecord model inaccessible to users of that model."
   s.test_files = "spec/spec_suite.rb"
@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   # s.add_dependency("activerecord", ">= 2.1.0")
  
   s.test_files = %w(spec/attr_private/attr_private_spec.rb)
-  s.require_path = 'lib'
   s.author = "Grant Goodale"
   s.email = "grant@reqall.com"
   s.homepage = "http://reqall.com"

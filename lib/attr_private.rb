@@ -18,7 +18,13 @@ module AttrPrivate
       extend ClassMethods
 
       fields.each {|field|
-        column = connection.columns(table_name, "AttrPrivate").detect{|column| column.name.to_sym == field.to_sym} 
+        begin
+          column = connection.columns(table_name, "AttrPrivate").detect{|column| column.name.to_sym == field.to_sym} 
+        rescue => e
+          # If an error occurs looking up the column, we're probably in a context where the db isn't populated.  
+          # Do nothing.
+          next
+        end
         raise ActiveRecord::ActiveRecordError, "Unknown field #{field}" if column.nil?
 
         puts "protecting #{field}"
