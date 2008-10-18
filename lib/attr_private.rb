@@ -27,7 +27,6 @@ module AttrPrivate
         end
         raise ActiveRecord::ActiveRecordError, "Unknown field #{field}" if column.nil?
 
-        puts "protecting #{field}"
         # prevent bulk assignment
         attr_protected field
         

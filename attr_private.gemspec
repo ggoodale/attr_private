@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "attr_private"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
   s.summary = "attr_private provides a way of making fields on an " <<
               "ActiveRecord model inaccessible to users of that model."
   s.test_files = "spec/spec_suite.rb"
